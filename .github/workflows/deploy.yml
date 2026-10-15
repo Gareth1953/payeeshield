@@ -13,17 +13,15 @@ jobs:
       - name: Build site
         run: |
           mkdir -p public
-          if [ -f index.html ]; then
-            cp index.html public/index.html
-          else
-            echo '<!DOCTYPE html><html><body><h1>PayeeShield LIVE</h1><p>Build ok</p></body></html>' > public/index.html
-          fi
+          cp index.html public/index.html 2>/dev/null || true
+          cp thanks.html public/thanks.html 2>/dev/null || true
+          cp -r agent-trust-gate public/agent-trust-gate 2>/dev/null || true
+          cp *.html public/ 2>/dev/null || true
           ls -la public
-          cat public/index.html
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir:./public
           publish_branch: gh-pages
           force_orphan: true
