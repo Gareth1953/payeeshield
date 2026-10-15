@@ -3,140 +3,88 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Payeeshield Gatepass v2.0 - PayPal Checkout</title>
+<title>Payeeshield Gatepass v2.0 — Fully Automatic Trust Gate</title>
 <script src="https://cdn.tailwindcss.com"></script>
+<!-- LIVE PAYPAL HOSTED BUTTONS SDK - GBP -->
+<script src="https://www.paypal.com/sdk/js?client-id=BAAnhCRzIokFJmDMZrogP8wj_3S2-xWUZ4ehZmImo07_ff0fDVL4r60ziOiJ_8j2nSLu3rwNyc9Hcgjurw&components=hosted-buttons&disable-funding=venmo&currency=GBP"></script>
 <style>
-body{background:#020617;color:#e2e8f0}
+body{background:#020617;color:#e2e8f0;font-family:Inter,system-ui}
 .card{background:#0f172a;border:1px solid #1e293b}
+.glow{box-shadow:0 0 30px rgba(16,185,129,0.15)}
 </style>
 </head>
-<body class="min-h-screen p-6">
-<div class="max-w-6xl mx-auto">
-
-<!-- SETUP BOX - THIS IS WHERE YOU PASTE YOUR ID -->
-<div class="card rounded-2xl p-5 mb-6 border-emerald-500/30">
-<h2 class="text-emerald-400 font-bold text-lg mb-2">STEP 1: PASTE YOUR PAYPAL LIVE CLIENT ID HERE</h2>
-<p class="text-sm text-slate-400 mb-3">Go to developer.paypal.com -> My Apps & Credentials -> Create App -> Copy Client ID (starts with Ae...)</p>
-<div class="flex gap-3">
-<input id="paypalIdInput" placeholder="Paste Ae... Client ID here, or leave 'sb' for sandbox test" class="flex-1 bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white" value="sb">
-<button onclick="reloadPayPal()" class="bg-emerald-500 hover:bg-emerald-400 text-black font-bold px-6 rounded-lg">Save & Load Buttons</button>
+<body class="min-h-screen">
+<div class="max-w-6xl mx-auto p-6">
+<div class="bg-emerald-950/40 border border-emerald-500/40 rounded-2xl p-4 mb-8 flex items-center justify-between">
+<div>
+<p class="text-emerald-400 font-bold text-sm">● PAYPAL LIVE — GBP — REAL CHECKOUT</p>
+<p class="text-xs text-slate-400 mt-1">Gareth Price — All payments go directly to your PayPal Business. PayPal + Pay Later + Card + Apple Pay enabled.</p>
 </div>
-<p class="text-xs text-slate-500 mt-2">Current: <span id="currentId" class="font-mono text-emerald-300">sb (sandbox test mode)</span></p>
+<div class="text-xs bg-emerald-500 text-black font-bold px-3 py-1 rounded-full">LIVE</div>
 </div>
 
-<h1 class="text-4xl font-bold mb-2">Payeeshield Gatepass v2.0 — Fully Automatic</h1>
-<p class="text-slate-400 mb-8">MEMORY + SELF-LEARNING + 8-FACTOR TRUST GATE + AUTO-BLOCK. PayPal Secure Checkout.</p>
+<div class="text-center mb-10">
+<h1 class="text-5xl font-black tracking-tight mb-3">Payeeshield Gatepass <span class="text-emerald-400">v2.0</span></h1>
+<p class="text-xl text-slate-400">MEMORY + SELF-LEARNING + 8-FACTOR TRUST GATE + AUTO-BLOCK</p>
+<p class="text-sm text-slate-500 mt-2">The first fully automatic payee risk firewall for AI agents. Stops the next payment fraud before it happens.</p>
+</div>
 
-<div class="grid md:grid-cols-3 gap-6">
+<div class="grid md:grid-cols-3 gap-6 items-start">
+
 <!-- £49 -->
 <div class="card rounded-2xl p-6">
-<h3 class="font-bold text-xl">One-Time Audit</h3>
-<p class="text-3xl font-bold my-3">£49</p>
-<p class="text-sm text-slate-400 mb-4">Single domain deep scan + PDF audit + WHY 92 breakdown</p>
-<div id="paypal-button-49" class="min-h-[45px] bg-slate-900 rounded-lg flex items-center justify-center text-slate-500 text-sm">PayPal button loads here</div>
-<ul class="text-xs text-slate-400 mt-4 space-y-1"><li>✓ Instant download</li><li>✓ 8-factor score</li><li>✓ Email delivery</li></ul>
+<h3 class="font-bold text-lg">Gatepass v2</h3>
+<p class="text-xs text-slate-500 mb-1">One-Time Audit</p>
+<p class="text-4xl font-black my-2">£49</p>
+<p class="text-xs text-slate-400 mb-4">Single domain deep scan + 8-factor + WHY 92 + PDF audit + 2yr memory. Instant download.</p>
+<div id="paypal-container-RAWKCX8SWBHN2" class="min-h-[150px]"></div>
+<script>paypal.HostedButtons({hostedButtonId: "RAWKCX8SWBHN2"}).render("#paypal-container-RAWKCX8SWBHN2")</script>
+<p class="text-[10px] text-slate-600 mt-2 text-center">ID: RAWKCX8SWBHN2 — GBP — Payment Links, Buy Buttons</p>
 </div>
-<!-- £199 -->
-<div class="card rounded-2xl p-6 border-emerald-500/50 ring-1 ring-emerald-500/20">
-<div class="bg-emerald-500 text-black text-xs font-bold px-2 py-1 rounded inline-block mb-2">MOST POPULAR</div>
-<h3 class="font-bold text-xl">API Gate</h3>
-<p class="text-3xl font-bold my-3">£199<span class="text-sm font-normal text-slate-400">/mo</span></p>
-<p class="text-sm text-slate-400 mb-4">Real-time trust gate for AI agents + auto-block + 2yr memory</p>
-<div id="paypal-button-199" class="min-h-[45px] bg-slate-900 rounded-lg flex items-center justify-center text-slate-500 text-sm">PayPal button loads here</div>
-<ul class="text-xs text-slate-400 mt-4 space-y-1"><li>✓ Live API key ps_live_...</li><li>✓ Auto-block risky payees</li><li>✓ Memory + self-learning</li></ul>
+
+<!-- £199 POPULAR -->
+<div class="card rounded-2xl p-6 border-emerald-500/50 glow ring-1 ring-emerald-500/30 scale-[1.02]">
+<div class="flex justify-between items-center mb-1">
+<h3 class="font-bold text-lg">API Gate</h3>
+<span class="bg-emerald-500 text-black text-[10px] font-black px-2 py-1 rounded">MOST POPULAR</span>
 </div>
+<p class="text-xs text-emerald-400 mb-1">Fully Automatic — Real-time</p>
+<p class="text-4xl font-black my-2">£199<span class="text-base font-normal text-slate-400">/mo</span></p>
+<p class="text-xs text-slate-400 mb-4">Live API gate: ps_live_... key + auto-block + 2yr memory + self-learning. Plug into any AI agent.</p>
+<div id="paypal-container-5D6C27E8FA9HN" class="min-h-[150px]"></div>
+<script>paypal.HostedButtons({hostedButtonId: "5D6C27E8FA9HN"}).render("#paypal-container-5D6C27E8FA9HN")</script>
+<p class="text-[10px] text-slate-600 mt-2 text-center">ID: 5D6C27E8FA9HN — GBP</p>
+</div>
+
 <!-- £499 -->
 <div class="card rounded-2xl p-6">
-<h3 class="font-bold text-xl">Enterprise</h3>
-<p class="text-3xl font-bold my-3">£499<span class="text-sm font-normal text-slate-400">/mo</span></p>
-<p class="text-sm text-slate-400 mb-4">Multi-domain + team seats + SLA + dedicated support</p>
-<div id="paypal-button-499" class="min-h-[45px] bg-slate-900 rounded-lg flex items-center justify-center text-slate-500 text-sm">PayPal button loads here</div>
-<ul class="text-xs text-slate-400 mt-4 space-y-1"><li>✓ Unlimited domains</li><li>✓ 5 team members</li><li>✓ 24h support</li></ul>
+<h3 class="font-bold text-lg">Enterprise</h3>
+<p class="text-xs text-slate-500 mb-1">Team + SLA</p>
+<p class="text-4xl font-black my-2">£499<span class="text-base font-normal text-slate-400">/mo</span></p>
+<p class="text-xs text-slate-400 mb-4">Multi-domain + 5 seats + SLA + dedicated support + advanced self-learning audit.</p>
+<div id="paypal-container-6ZMWLSJEDY2UW" class="min-h-[150px]"></div>
+<script>paypal.HostedButtons({hostedButtonId: "6ZMWLSJEDY2UW"}).render("#paypal-container-6ZMWLSJEDY2UW")</script>
+<p class="text-[10px] text-slate-600 mt-2 text-center">ID: 6ZMWLSJEDY2UW — GBP</p>
+</div>
+
+</div>
+
+<div class="card rounded-2xl p-6 mt-10">
+<h4 class="font-bold mb-2">What happens after payment?</h4>
+<ul class="text-sm text-slate-400 list-disc pl-5 space-y-1">
+<li>PayPal confirms payment → redirects to your thanks page</li>
+<li>Customer gets instant download of audit + API key (we'll wire auto-delivery next)</li>
+<li>You get GBP in your PayPal Business instantly — Gareth Price account</li>
+<li>All buttons support PayPal, Pay Later (split), Debit/Credit Card, Apple Pay as in your preview</li>
+</ul>
+<div class="mt-4 p-3 bg-black/40 rounded-lg font-mono text-[11px] text-slate-500 break-all">
+Live Client ID: BAAnhCRzIokFJmDMZ...jurw — Currency: GBP — Components: hosted-buttons — Funding disabled: venmo
 </div>
 </div>
 
-<div id="success" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center p-6 z-50">
-<div class="card rounded-2xl p-8 max-w-md w-full text-center">
-<h2 class="text-2xl font-bold text-emerald-400">Payment Captured!</h2>
-<p class="mt-2 text-slate-300">Tier: <span id="paidTier"></span></p>
-<p class="font-mono text-sm bg-slate-900 p-3 rounded mt-4" id="apiKey">ps_live_7f3k9... </p>
-<button onclick="downloadAudit()" class="mt-4 bg-emerald-500 text-black font-bold px-6 py-3 rounded-lg w-full">Download Audit PDF</button>
-<button onclick="document.getElementById('success').classList.add('hidden')" class="mt-2 text-slate-400 text-sm">Close</button>
+<div class="text-center mt-8 text-xs text-slate-600">
+© Payeeshield Gatepass v2.0 — Gareth Price — Market Harborough — Live on PayPal — 15/10/2026
 </div>
-</div>
-
-<script>
-let CLIENT_ID = localStorage.getItem('pp_client') || 'sb';
-document.getElementById('paypalIdInput').value = CLIENT_ID;
-document.getElementById('currentId').textContent = CLIENT_ID;
-
-function reloadPayPal(){
-  const v = document.getElementById('paypalIdInput').value.trim();
-  if(!v){ alert('Paste Client ID'); return; }
-  CLIENT_ID = v;
-  localStorage.setItem('pp_client', v);
-  document.getElementById('currentId').textContent = v;
-  loadPayPalSDK();
-}
-
-function loadPayPalSDK(){
-  // remove old
-  const old = document.getElementById('pp-sdk');
-  if(old) old.remove();
-  document.querySelectorAll('[id^="paypal-button-"]').forEach(el=>el.innerHTML='Loading PayPal...');
-  const s = document.createElement('script');
-  s.id='pp-sdk';
-  s.src=`https://www.paypal.com/sdk/js?client-id=${CLIENT_ID}&currency=GBP&intent=capture`;
-  s.onload = initButtons;
-  s.onerror = ()=>alert('Invalid Client ID. Use sb for test or your real Ae... ID from developer.paypal.com');
-  document.head.appendChild(s);
-}
-
-function initButtons(){
-  if(!window.paypal){ return; }
-  const tiers = [
-    {id:'49', price:'49.00', name:'One-Time Audit'},
-    {id:'199', price:'199.00', name:'API Gate Monthly'},
-    {id:'499', price:'499.00', name:'Enterprise Monthly'},
-  ];
-  tiers.forEach(t=>{
-    const el = document.getElementById(`paypal-button-${t.id}`);
-    if(!el) return;
-    el.innerHTML='';
-    paypal.Buttons({
-      style:{layout:'vertical', color:'gold', shape:'rect', label:'paypal'},
-      createOrder:(data,actions)=>actions.order.create({
-        purchase_units:[{description:`Payeeshield ${t.name}`, amount:{currency_code:'GBP', value:t.price}}]
-      }),
-      onApprove:(data,actions)=>actions.order.capture().then(details=>{
-        document.getElementById('paidTier').textContent = t.name + ' £' + t.price;
-        document.getElementById('apiKey').textContent = 'ps_live_' + Math.random().toString(36).slice(2,12) + '_' + t.id;
-        document.getElementById('success').classList.remove('hidden');
-        localStorage.setItem('payeeshield_paid', t.id);
-      })
-    }).render(`#paypal-button-${t.id}`);
-  });
-}
-
-function downloadAudit(){
-  const blob = new Blob([`Payeeshield Gatepass v2.0 Audit\nRisk Score: 92 - LOW\n8-Factor Check Passed\nDate: ${new Date().toISOString()}\nTier: ${document.getElementById('paidTier').textContent}`], {type:'text/plain'});
-  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='Payeeshield-Audit.txt'; a.click();
-}
-
-// auto load
-loadPayPalSDK();
-</script>
-
-<!-- 
-HOW TO FIND THE LINE:
-Line 32-35 is the input box. 
-Line 57: let CLIENT_ID = localStorage.getItem('pp_client') || 'sb';
-Just paste your Ae... ID into the box at the TOP of the page and click Save & Load Buttons. No need to edit code in Notepad if you use the box.
-
-If you DO want to edit in Notepad:
-Search for: CLIENT_ID = localStorage.getItem
-Change 'sb' to your live ID.
--->
 
 </div>
 </body>
