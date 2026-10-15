@@ -13,7 +13,13 @@ jobs:
       - name: Build site
         run: |
           mkdir -p public
-          if (Test-Path index.html) { Copy-Item index.html public/index.html -Force } else { "<h1>PayeeShield LIVE</h1>" | Out-File public/index.html }
+          if [ -f index.html ]; then
+            cp index.html public/index.html
+          else
+            echo '<!DOCTYPE html><html><body><h1>PayeeShield LIVE</h1><p>Build ok</p></body></html>' > public/index.html
+          fi
+          ls -la public
+          cat public/index.html
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
