@@ -4,23 +4,21 @@ on:
     branches: [main]
   workflow_dispatch:
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - name: Build site
-        run: |
-          mkdir -p public
-          cp index.html public/ 2>/dev/null || true
-          cp thanks.html public/ 2>/dev/null || true
-          cp -r agent-trust-gate public/ 2>/dev/null || true
-          ls -la public
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
+      - uses: actions/configure-pages@v5
+      - run: mkdir -p _site && cp index.html _site/index.html && ls -l _site
+      - uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          publish_branch: gh-pages
-          force_orphan: true
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
