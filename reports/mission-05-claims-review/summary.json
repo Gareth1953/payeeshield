@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-16",
+  "runtime": "v24.21.0",
+  "browser": "Edg/155.0.4283.45",
+  "viewports": [
+    1440,
+    390,
+    320
+  ],
+  "browserErrors": 0,
+  "externalPageRequests": 0,
+  "horizontalOverflow": false,
+  "gitWhitespaceCheckExitCode": 0,
+  "noPushOrPublication": true,
+  "repository": "Gareth1953/payeeshield",
+  "branch": "repair/mission-05-synthetic-claims",
+  "base": "4f88861adf41ec4ead3ae6bad1502333dd405fff",
+  "focusedSiteTests": {
+    "passed": 6,
+    "failed": 0,
+    "skipped": 0
+  },
+  "browserViews": 9,
+  "localLinkChecks": 16,
+  "unverifiedPaymentQueryIgnored": true,
+  "stagedArtifact": [
+    "index.html",
+    "Audit.html",
+    "thanks.html",
+    "site.css",
+    "site.js"
+  ],
+  "hosting": {
+    "build_type": "legacy",
+    "html_url": "https://gareth1953.github.io/payeeshield/",
+    "source": {
+      "branch": "main",
+      "path": "/"
+    },
+    "status": "built"
+  },
+  "publicationTrigger": "Legacy main/root Pages publication on main changes; existing custom workflow also runs on main push or workflow_dispatch. No configuration switch made.",
+  "preservedCheckouts": {
+    "payeeshield-clean": {
+      "main": "fe1518400b4bdcd801018e179d73bedc3e462e77",
+      "clean": true
+    },
+    "payeeshield-final": {
+      "main": "4f88861adf41ec4ead3ae6bad1502333dd405fff",
+      "preexistingUntracked": "agent-trust-gate/"
+    }
+  },
+  "limitations": [
+    "Predetermined browser text, not ATG enforcement",
+    "No email sent; real mail client behaviour untested",
+    "No live payment verification",
+    "Physical devices, screen readers and actual Pages deployment untested"
+  ],
+  "review": "../../REVIEW.md"
+}

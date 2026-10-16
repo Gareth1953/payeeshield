@@ -1,0 +1,14 @@
+✔ all public pages identify the synthetic boundary without operational claims (3.7264ms)
+✔ thank-you URL grants no payment status or invented entitlement (1.6071ms)
+✔ enquiry explains mailto disclosure, labels fields and uses confirmed contact (0.8267ms)
+✔ local links, fragment targets and assets resolve with exact filename case (5.5592ms)
+✔ runtime contains only fictional text selection with no network, storage or payment path (0.7867ms)
+✔ deployment selects all corrected pages and local assets without broadening its triggers (1.1622ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 122.282

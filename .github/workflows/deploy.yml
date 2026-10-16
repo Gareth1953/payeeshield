@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
-      - run: mkdir -p _site && cp index.html _site/index.html && ls -l _site
+      - run: mkdir -p _site && cp index.html Audit.html thanks.html site.css site.js _site/ && test -f _site/Audit.html && test -f _site/thanks.html && ls -l _site
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
